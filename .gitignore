@@ -30,7 +30,7 @@ fuzz_results_*/
 *.orig
 *.rej
 
-# Archive files (keep these - they're good!)
+# Archive files
 *.tar
 *.tar.*
 *.jar
@@ -45,7 +45,3 @@ fuzz_results_*/
 *.backup
 *.old
 *.sig
-
-# Remove these (not needed for your project):
-# pkg/          # Not needed for bash script
-# src/          # Not needed for bash script
