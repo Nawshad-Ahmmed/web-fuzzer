@@ -75,10 +75,11 @@ curl - sudo apt install curl
 parallel - sudo apt install parallel
 
 # Verify Installation
-# Check if all dependencies are installed
+Check if all dependencies are installed
+
 ./web_fuzzer.sh --help
 
-# Expected output: Shows usage information and options
+Expected output: Shows usage information and options
 
 # 🚀 Quick Start
 
