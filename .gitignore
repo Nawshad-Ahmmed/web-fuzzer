@@ -1,3 +1,36 @@
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+*.log.*
+logs/
+results/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Output directories (exclude large scan results)
+bugbounty_results_*/
+fuzz_results_*/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS specific
+*.orig
+*.rej
+
+# Archive files (keep these - they're good!)
 *.tar
 *.tar.*
 *.jar
@@ -6,9 +39,13 @@
 *.deb
 *.zip
 *.tgz
-*.log
-*.log.*
+
+# Backup files
+*.bak
+*.backup
+*.old
 *.sig
 
-pkg/
-src/
+# Remove these (not needed for your project):
+# pkg/          # Not needed for bash script
+# src/          # Not needed for bash script
