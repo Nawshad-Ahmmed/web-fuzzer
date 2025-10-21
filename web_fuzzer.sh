@@ -18,12 +18,18 @@ NC='\033[0m' # No Color
 
 # Banner
 echo -e "${PURPLE}"
-echo "░█▄░█░█░▄▀▀░▀█▀░█▀▄░█▀▀░█▀▄"
-echo "░█░█░█░█░░░░█░░█░█░█▀▀░█▀▄"
-echo "░▀░▀░▀░▀▀▀░░▀░░▀▀░░▀▀▀░▀░▀"
+echo "┌─────────────────────────┐"
+echo "│  ██╗  ██╗██╗   ██╗███╗   ██╗████████╗███████╗██████╗  │"
+echo "│  ██║  ██║██║   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗ │"
+echo "│  ███████║██║   ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝ │"
+echo "│  ██╔══██║██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗ │"
+echo "│  ██║  ██║╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║ │"
+echo "│  ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝ │"
+echo "└─────────────────────────┘"
 echo -e "${CYAN}"
-echo "Web Fuzzer v2.0 - Bug Bounty Edition"
-echo "============================================="
+echo "Web Fuzzer - By Md Nawshad Ahmmed"
+echo "Bug Bounty Edition"
+echo "======================================"
 echo -e "${NC}"
 
 # Default values
@@ -206,8 +212,9 @@ if [[ ! -f "$WORDLIST" ]]; then
     exit 1
 fi
 
-# Create output directory
-OUTPUT_DIR="bugbounty_results_$(echo $URL | sed 's|https?://||; s|/|_|g')_$(date +%Y%m%d_%H%M%S)"
+# Create output directory - SHORTENED VERSION
+DOMAIN_SHORT=$(echo "$URL" | sed -E 's|https?://||; s|/.*||' | cut -c1-12)
+OUTPUT_DIR="results_${DOMAIN_SHORT}_$(date +%m%d_%H%M)"
 mkdir -p "$OUTPUT_DIR"
 
 # Function to make HTTP request with retries
